@@ -102,7 +102,8 @@ int main(void)
   LCD_Fill(0, 0, LCD_W, LCD_H, WHITE);
   while (1)
   {
-		
+    
+    
     LCD_ShowChinese(0, 0, "ÖÐ¾°Ô°µç×Ó", RED, WHITE, 32, 0);
     LCD_ShowString(0, 40, "LCD_W:", RED, WHITE, 16, 0);
     LCD_ShowIntNum(48, 40, LCD_W, 3, RED, WHITE, 16);

@@ -1,7 +1,7 @@
 Dependencies for Project 'LCD', Target 'LCD': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (startup_stm32f103xe.s)(0x64B118D4)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include--pd "__UVISION_VERSION SETA 535" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xe.lst --xref -o lcd\startup_stm32f103xe.o --depend lcd\startup_stm32f103xe.d)
-F (../Core/Src/main.c)(0x64B14790)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\main.o --omf_browse lcd\main.crf --depend lcd\main.d)
+F (startup_stm32f103xe.s)(0x64B15194)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include--pd "__UVISION_VERSION SETA 535" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xe.lst --xref -o lcd\startup_stm32f103xe.o --depend lcd\startup_stm32f103xe.d)
+F (../Core/Src/main.c)(0x64B151F8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\main.o --omf_browse lcd\main.crf --depend lcd\main.d)
 I (../Core/Inc/main.h)(0x64AF9CBF)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64A2CBB6)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x64AF9CBE)
@@ -32,9 +32,9 @@ I (../Core/Inc/usart.h)(0x64AA9D5F)
 I (../Core/Inc/gpio.h)(0x64AA9D5E)
 I (./HARDWARE/lcd.h)(0x64AE90EE)
 I (D:\KeilMDKARM5.35\mdk\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-I (./HARDWARE/lcd_init.h)(0x64B13C75)
+I (./HARDWARE/lcd_init.h)(0x64B14F46)
 I (./HARDWARE/pic.h)(0x5E69B55D)
-F (../Core/Src/gpio.c)(0x64AF9CBE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\gpio.o --omf_browse lcd\gpio.crf --depend lcd\gpio.d)
+F (../Core/Src/gpio.c)(0x64B15191)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\gpio.o --omf_browse lcd\gpio.crf --depend lcd\gpio.d)
 I (../Core/Inc/gpio.h)(0x64AA9D5E)
 I (../Core/Inc/main.h)(0x64AF9CBF)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64A2CBB6)
@@ -537,11 +537,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64A2CBB6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x64A2CBB6)
 F (.\HARDWARE\font.c)(0x64AE14F3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\font.o --omf_browse lcd\font.crf --depend lcd\font.d)
 I (HARDWARE\lcdfont.h)(0x64AE9175)
-F (.\HARDWARE\lcd.c)(0x64AE904F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\lcd.o --omf_browse lcd\lcd.crf --depend lcd\lcd.d)
+F (.\HARDWARE\lcd.c)(0x64B14C08)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\lcd.o --omf_browse lcd\lcd.crf --depend lcd\lcd.d)
 I (HARDWARE\lcd.h)(0x64AE90EE)
 I (D:\KeilMDKARM5.35\mdk\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\KeilMDKARM5.35\mdk\ARM\ARMCC\include\stdbool.h)(0x6025237C)
-I (HARDWARE\lcd_init.h)(0x64B13C75)
+I (HARDWARE\lcd_init.h)(0x64B14F46)
 I (../Core/Inc/main.h)(0x64AF9CBF)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64A2CBB6)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x64AF9CBE)
@@ -568,8 +568,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64A2CBB6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64A2CBB6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x64A2CBB6)
 I (HARDWARE\lcdfont.h)(0x64AE9175)
-F (.\HARDWARE\lcd_init.c)(0x64B1490F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\lcd_init.o --omf_browse lcd\lcd_init.crf --depend lcd\lcd_init.d)
-I (HARDWARE\lcd_init.h)(0x64B13C75)
+F (.\HARDWARE\lcd_init.c)(0x64B14F6A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ./HARDWARE-I.\RTE\_LCD-IC:\Users\wpr\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include-D__UVISION_VERSION="535" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o lcd\lcd_init.o --omf_browse lcd\lcd_init.crf --depend lcd\lcd_init.d)
+I (HARDWARE\lcd_init.h)(0x64B14F46)
 I (D:\KeilMDKARM5.35\mdk\ARM\ARMCC\include\stdint.h)(0x6025237E)
 I (D:\KeilMDKARM5.35\mdk\ARM\ARMCC\include\stdbool.h)(0x6025237C)
 I (../Core/Inc/main.h)(0x64AF9CBF)

@@ -1,23 +1,24 @@
 #include "lcd_init.h"
 
+
 void LCD_GPIO_Init(void)
 {
-	// GPIO_InitTypeDef  GPIO_InitStructure;
+	// GPIO_InitTypeDef GPIO_InitStructure;
 
-	// RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOD, ENABLE);	 //使能A端口时钟
-	// GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_7;
-	// GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
-	// GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//速度50MHz
+	// RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOD, ENABLE); // 使能A端口时钟
+	// GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_7;
+	// GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;  // 推挽输出
+	// GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; // 速度50MHz
 	// GPIO_Init(GPIOA, &GPIO_InitStructure);
-	// GPIO_SetBits(GPIOA,GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_7);
+	// GPIO_SetBits(GPIOA, GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_7);
 
-	// GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5|GPIO_Pin_6;
+	// GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_6;
 	// GPIO_Init(GPIOB, &GPIO_InitStructure);
-	// GPIO_SetBits(GPIOB,GPIO_Pin_5|GPIO_Pin_6);
+	// GPIO_SetBits(GPIOB, GPIO_Pin_5 | GPIO_Pin_6);
 
 	// GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
 	// GPIO_Init(GPIOD, &GPIO_InitStructure);
-	// GPIO_SetBits(GPIOD,GPIO_Pin_2);
+	// GPIO_SetBits(GPIOD, GPIO_Pin_2);
 }
 
 /******************************************************************************
@@ -130,9 +131,8 @@ void LCD_Address_Set(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 }
 
 void LCD_Init(void)
-
 {
-	// LCD_GPIO_Init();//初始化GPIO
+	//LCD_GPIO_Init(); // 初始化GPIO
 
 	LCD_RES_Clr(); // 复位
 	delay_ms(100);
@@ -144,8 +144,7 @@ void LCD_Init(void)
 
 	//************* Start Initial Sequence **********//
 	LCD_WR_REG(0x11); // Sleep out
-
-	delay_ms(120); // Delay 120ms
+	delay_ms(120);	  // Delay 120ms
 	//************* Start Initial Sequence **********//
 	LCD_WR_REG(0x36);
 	if (USE_HORIZONTAL == 0)

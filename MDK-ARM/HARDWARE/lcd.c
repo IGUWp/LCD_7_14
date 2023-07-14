@@ -2,7 +2,6 @@
 #include "lcd_init.h"
 #include "lcdfont.h"
 
-// extern typFNT_GB16 tfont16[];
 /******************************************************************************
 	  函数说明：在指定区域填充颜色
 	  入口数据：xsta,ysta   起始坐标
@@ -179,7 +178,7 @@ void LCD_ShowChinese12x12(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		  // 汉字数目
+	uint16_t HZnum;		 // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -240,7 +239,7 @@ void LCD_ShowChinese16x16(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		  // 汉字数目
+	uint16_t HZnum;		 // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -300,7 +299,7 @@ void LCD_ShowChinese24x24(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		  // 汉字数目
+	uint16_t HZnum;		 // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -360,7 +359,7 @@ void LCD_ShowChinese32x32(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		  // 汉字数目
+	uint16_t HZnum;		 // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
