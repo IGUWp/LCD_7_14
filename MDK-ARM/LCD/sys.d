@@ -1,0 +1,10 @@
+lcd\sys.o: SYSTEM\sys.c
+lcd\sys.o: SYSTEM\sys.h
+lcd\sys.o: C:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include\stm32f10x.h
+lcd\sys.o: .\RTE\_LCD\RTE_Components.h
+lcd\sys.o: ../Drivers/CMSIS/Include/core_cm3.h
+lcd\sys.o: D:\KeilMDKARM5.35\mdk\ARM\ARMCC\Bin\..\include\stdint.h
+lcd\sys.o: ../Drivers/CMSIS/Include/cmsis_version.h
+lcd\sys.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+lcd\sys.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+lcd\sys.o: C:\Users\wpr\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Include\system_stm32f10x.h

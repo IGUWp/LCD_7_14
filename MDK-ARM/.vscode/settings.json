@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "lcd.h": "c",
+        "delay.h": "c",
+        "sys.h": "c",
+        "lcd_init.h": "c",
+        "lcdfont.h": "c",
+        "gpio.h": "c",
+        "main.h": "c",
+        "st7789.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "stdbool.h": "c",
+        "stdint.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
