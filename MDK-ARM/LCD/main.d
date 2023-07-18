@@ -32,3 +32,8 @@ lcd\main.o: ./HARDWARE/lcd.h
 lcd\main.o: D:\KeilMDKARM5.35\mdk\ARM\ARMCC\Bin\..\include\stdbool.h
 lcd\main.o: ./HARDWARE/lcd_init.h
 lcd\main.o: ./HARDWARE/pic.h
+lcd\main.o: ./HARDWARE/max30102.h
+lcd\main.o: ./HARDWARE/xiic.h
+lcd\main.o: ./HARDWARE/algorithm.h
+lcd\main.o: ./HARDWARE/blood.h
+lcd\main.o: D:\KeilMDKARM5.35\mdk\ARM\ARMCC\Bin\..\include\math.h
