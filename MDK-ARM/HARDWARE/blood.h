@@ -18,7 +18,6 @@ typedef struct
 } BloodData;
 
 void blood_data_translate(void);
-void blood_data_update(void);
-void blood_Loop(void);
-
+uint8_t blood_data_update(void) ;
+void blood_Loop(BloodData *g_blooddata);
 #endif

@@ -21,7 +21,7 @@ typedef struct
 	unsigned char Msk[32];
 } typFNT_GB16;
 
-extern const typFNT_GB16 tfont16[5];
+extern const typFNT_GB16 tfont16[10];
 
 typedef struct
 {
@@ -29,7 +29,7 @@ typedef struct
 	unsigned char Msk[72];
 } typFNT_GB24;
 
-extern const typFNT_GB24 tfont24[5];
+extern const typFNT_GB24 tfont24[4];
 
 typedef struct
 {

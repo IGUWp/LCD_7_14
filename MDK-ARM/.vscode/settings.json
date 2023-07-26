@@ -16,7 +16,11 @@
         "xiic.h": "c",
         "algorithm.h": "c",
         "blood.h": "c",
-        "max30102.h": "c"
+        "max30102.h": "c",
+        "pic.h": "c",
+        "stm32f1xx_it.h": "c",
+        "xmemory": "c",
+        "xutility": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

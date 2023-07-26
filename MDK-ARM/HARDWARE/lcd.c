@@ -178,7 +178,7 @@ void LCD_ShowChinese12x12(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		 // 汉字数目
+	uint16_t HZnum;		  // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -239,7 +239,7 @@ void LCD_ShowChinese16x16(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		 // 汉字数目
+	uint16_t HZnum;		  // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -299,7 +299,7 @@ void LCD_ShowChinese24x24(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		 // 汉字数目
+	uint16_t HZnum;		  // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -359,7 +359,7 @@ void LCD_ShowChinese32x32(uint16_t x, uint16_t y, uint8_t *s, uint16_t fc, uint1
 {
 	uint8_t i, j, m = 0;
 	uint16_t k;
-	uint16_t HZnum;		 // 汉字数目
+	uint16_t HZnum;		  // 汉字数目
 	uint16_t TypefaceNum; // 一个字符所占字节大小
 	uint16_t x0 = x;
 	TypefaceNum = (sizey / 8 + ((sizey % 8) ? 1 : 0)) * sizey;
@@ -510,9 +510,9 @@ uint32_t mypow(uint8_t m, uint8_t n)
 				sizey 字号
 	  返回值：  无
 ******************************************************************************/
-void LCD_ShowIntNum(uint16_t x, uint16_t y, uint16_t num, uint8_t len, uint16_t fc, uint16_t bc, uint8_t sizey)
+void LCD_ShowIntNum(uint16_t x, uint16_t y, uint16_t num, uint16_t len, uint16_t fc, uint16_t bc, uint8_t sizey)
 {
-	uint8_t t, temp;
+	uint16_t t, temp;
 	uint8_t enshow = 0;
 	uint8_t sizex = sizey / 2;
 	for (t = 0; t < len; t++)
@@ -531,6 +531,27 @@ void LCD_ShowIntNum(uint16_t x, uint16_t y, uint16_t num, uint8_t len, uint16_t 
 		LCD_ShowChar(x + t * sizex, y, temp + 48, fc, bc, sizey, 0);
 	}
 }
+// void LCD_ShowIntNum(uint16_t x, uint16_t y, uint16_t num, uint8_t len, uint16_t fc, uint16_t bc, uint8_t sizey)
+// {
+// 	uint8_t t, temp;
+// 	uint8_t enshow = 0;
+// 	uint8_t sizex = sizey / 2;
+// 	for (t = 0; t < len; t++)
+// 	{
+// 		temp = (num / mypow(10, len - t - 1)) % 10;
+// 		if (enshow == 0 && t < (len - 1))
+// 		{
+// 			if (temp == 0)
+// 			{
+// 				LCD_ShowChar(x + t * sizex, y, ' ', fc, bc, sizey, 0);
+// 				continue;
+// 			}
+// 			else
+// 				enshow = 1;
+// 		}
+// 		LCD_ShowChar(x + t * sizex, y, temp + 48, fc, bc, sizey, 0);
+// 	}
+// }
 
 /******************************************************************************
 	  函数说明：显示两位小数变量

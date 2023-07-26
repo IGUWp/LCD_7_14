@@ -19,28 +19,46 @@ BloodData g_blooddata = {0}; // 血液数据存储
 
 /*funcation start ------------------------------------------------------------*/
 // 血液检测信息更新
-void blood_data_update(void)
+uint8_t blood_data_update(void)
 {
 	// 标志位被使能时 读取FIFO
-	g_fft_index = 0;
-	while (g_fft_index < FFT_N)
+
+	if (MAX30102_INTPin_Read() == 0)
 	{
-		while (MAX30102_INTPin_Read() == 0)
-		{
-			// 读取FIFO
-			max30102_read_fifo(); // read from MAX30102 FIFO2
-			// 将数据写入fft输入并清除输出
-			if (g_fft_index < FFT_N)
-			{
-				// 将数据写入fft输入并清除输出
-				s1[g_fft_index].real = fifo_red;
-				s1[g_fft_index].imag = 0;
-				s2[g_fft_index].real = fifo_ir;
-				s2[g_fft_index].imag = 0;
-				g_fft_index++;
-			}
-		}
+		max30102_read_fifo();
+		s1[g_fft_index].real = fifo_red;
+		s1[g_fft_index].imag = 0;
+		s2[g_fft_index].real = fifo_ir;
+		s2[g_fft_index].imag = 0;
+		g_fft_index++;
 	}
+
+	if (g_fft_index >= FFT_N)
+	{
+		g_fft_index = 0;
+		return 1;
+	}
+	else
+		return 0;
+
+	// while (g_fft_index < FFT_N)
+	// {
+	// 	while (MAX30102_INTPin_Read() == 0)
+	// 	{
+	// 		// 读取FIFO
+	// 		max30102_read_fifo(); // read from MAX30102 FIFO2
+	// 		// 将数据写入fft输入并清除输出
+	// 		if (g_fft_index < FFT_N)
+	// 		{
+	// 			// 将数据写入fft输入并清除输出
+	// 			s1[g_fft_index].real = fifo_red;
+	// 			s1[g_fft_index].imag = 0;
+	// 			s2[g_fft_index].real = fifo_ir;
+	// 			s2[g_fft_index].imag = 0;
+	// 			g_fft_index++;
+	// 		}
+	// 	}
+	// }
 }
 
 // 血液信息转换
@@ -68,8 +86,6 @@ void blood_data_translate(void)
 	}
 
 	// 移动平均滤波
-	UsartPrintf(USART_DEBUG, "***********8 pt Moving Average red******************************************************\r\n");
-	//
 	for (i = 1; i < FFT_N - 1; i++)
 	{
 		n_denom = (s1[i - 1].real + 2 * s1[i].real + s1[i + 1].real);
@@ -86,22 +102,12 @@ void blood_data_translate(void)
 
 		n_denom = (s2[i].real + s2[i + 1].real + s2[i + 2].real + s2[i + 3].real + s2[i + 4].real + s2[i + 5].real + s2[i + 6].real + s2[i + 7].real);
 		s2[i].real = n_denom / 8.00;
-
-		UsartPrintf(USART_DEBUG, "%f\r\n", s1[i].real);
 	}
-	UsartPrintf(USART_DEBUG, "************8 pt Moving Average ir*************************************************************\r\n");
-	for (i = 0; i < FFT_N; i++)
-	{
-		UsartPrintf(USART_DEBUG, "%f\r\n", s2[i].real);
-	}
-	UsartPrintf(USART_DEBUG, "**************************************************************************************************\r\n");
-	// 开始变换显示
 	g_fft_index = 0;
 	// 快速傅里叶变换
 	FFT(s1);
 	FFT(s2);
 	// 解平方
-	UsartPrintf(USART_DEBUG, "开始FFT算法****************************************************************************************************\r\n");
 	for (i = 0; i < FFT_N; i++)
 	{
 		s1[i].real = sqrtf(s1[i].real * s1[i].real + s1[i].imag * s1[i].imag);
@@ -113,26 +119,6 @@ void blood_data_translate(void)
 		ac_red += s1[i].real;
 		ac_ir += s2[i].real;
 	}
-
-	for (i = 0; i < FFT_N / 2; i++)
-	{
-		UsartPrintf(USART_DEBUG, "%f\r\n", s1[i].real);
-	}
-	UsartPrintf(USART_DEBUG, "****************************************************************************************\r\n");
-	for (i = 0; i < FFT_N / 2; i++)
-	{
-		UsartPrintf(USART_DEBUG, "%f\r\n", s2[i].real);
-	}
-
-	UsartPrintf(USART_DEBUG, "结束FFT算法***************************************************************************************************************\r\n");
-	//	for(i = 0;i < 50;i++)
-	//	{
-	//		if(s1[i].real<=10)
-	//			break;
-	//	}
-
-	// UsartPrintf(USART_DEBUG,"%d\r\n",(int)i);
-	// 读取峰值点的横坐标  结果的物理意义为
 	int s1_max_index = find_max_num_index(s1, 30);
 	int s2_max_index = find_max_num_index(s2, 30);
 	UsartPrintf(USART_DEBUG, "%d\r\n", s1_max_index);
@@ -146,16 +132,20 @@ void blood_data_translate(void)
 	g_blooddata.SpO2 = sp02_num;
 }
 
-void blood_Loop(void)
+void blood_Loop(BloodData *blood)
 {
-	// 血液信息获取
-	blood_data_update();
+
+	if (blood_data_update() == 0)
+	{
+		return;
+	}
 	// 血液信息转换
 	blood_data_translate();
 	// 显示血液状态信息
-	g_blooddata.SpO2 = (g_blooddata.SpO2 > 99.99) ? 99.99 : g_blooddata.SpO2;
-	UsartPrintf(USART_DEBUG, "指令心率%3d", g_blooddata.heart);
-	UsartPrintf(USART_DEBUG, "指令血氧%0.2f", g_blooddata.SpO2);
-	// tft显示刷新
-	// LED 蜂鸣器信息更新
+	blood->heart = g_blooddata.heart;
+	blood->SpO2 = (g_blooddata.SpO2 > 99.99) ? 99.99 : g_blooddata.SpO2;
+	// UsartPrintf(USART_DEBUG, "指令心率%3d", g_blooddata.heart);
+	// UsartPrintf(USART_DEBUG, "指令血氧%0.2f", g_blooddata.SpO2);
+	//  tft显示刷新
+	//  LED 蜂鸣器信息更新
 }
